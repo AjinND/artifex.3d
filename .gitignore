@@ -1,0 +1,17 @@
+node_modules/
+.next/
+/.local/
+.env*
+!.env.example
+*.log
+*.tsbuildinfo
+build_errors.txt
+public/catalog-local/
+studio-assets/*
+
+.zencoder
+.zenflow
+
+graphify-out
+
+test-admin.json

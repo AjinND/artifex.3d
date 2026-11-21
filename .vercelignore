@@ -1,0 +1,7 @@
+.env*
+.local/
+studio-assets/*/source/**
+studio-assets/*/photos/**
+*.log
+build_errors.txt
+tsconfig.tsbuildinfo

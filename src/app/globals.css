@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --paper: #faf8f4;
+    --surface: #fff;
+    --ink: #282c29;
+    --muted: #626960;
+    --accent: #354b40;
+    --sage: #e4ebe2;
+    --blush: #f2e5df;
+    --blue: #e5edf2;
+    --line: #dcded6;
+    --control-line: #8b9489;
+    --danger: #913d38;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans), Arial, sans-serif;
+  }
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--muted);
+    opacity: 1;
+  }
+  button,
+  a {
+    transition:
+      background-color 180ms,
+      color 180ms,
+      border-color 180ms;
+  }
+  button:not(:disabled),
+  summary {
+    cursor: pointer;
+  }
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  ::selection {
+    background: var(--sage);
+    color: var(--ink);
+  }
+  dialog::backdrop {
+    background: rgb(40 44 41 / 40%);
+  }
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.sampleHeader {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  margin-bottom: 24px;
+}
+
+.sampleHeader h1,
+.sampleHeader p {
+  margin: 0;
+}
+
+.sampleStage {
+  position: relative;
+  height: clamp(270px, 58svh, 620px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--sage);
+}
+
+.sampleStage :global(model-viewer) {
+  position: absolute;
+  inset: 0;
+}
+
+.sampleMessage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.sampleMessage button {
+  pointer-events: auto;
+}
+
+.sampleControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 16px;
+  color: var(--muted);
+}
+
+.listingFields,
+.editorToolbar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: 16px;
+}
+
+.editorToolbar {
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+.editorToolbar a {
+  justify-self: end;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.listingFields .checkField {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+.listingFields .checkField input {
+  margin: 0;
+}
+
+.mediaPanel {
+  padding: 8px 16px 16px;
+  border-radius: 8px;
+  background: var(--blue);
+}
+
+.mediaPanel ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.mediaPanel code {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--surface);
+  overflow-wrap: anywhere;
+}
+
+.mediaPanel li {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.listingForm [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.queueList {
+  display: grid;
+  gap: 12px;
+}
+
+.queueList > article > section {
+  margin: 0;
+}
+
+.orderAction {
+  margin-top: -1px;
+  padding: 0 24px;
+  border: 1px solid var(--line);
+  border-radius: 0 0 12px 12px;
+  background: var(--surface);
+}
+
+.queueList article:has(.orderAction) > section {
+  border-radius: 12px 12px 0 0;
+}
+
+@media (max-width: 540px) {
+  .listingFields,
+  .editorToolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .editorToolbar a {
+    justify-self: start;
+  }
+
+  .orderAction {
+    padding-inline: 20px;
+  }
+}
